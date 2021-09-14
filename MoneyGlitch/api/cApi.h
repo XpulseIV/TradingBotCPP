@@ -11,12 +11,10 @@ public:
         int Month;
         int Day;
     };
-
-    enum currencies { BTC };
     
     struct cDataCsv
     {
-        currencies Currency;
+        std::string Currency;
         std::vector<cDate> Dates;
         std::vector<float> Close;
         std::vector<float> Open;
