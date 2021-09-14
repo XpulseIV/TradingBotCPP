@@ -154,11 +154,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BotDir\cBot.cpp" />
+    <ClCompile Include="api\cApi.cpp" />
     <ClCompile Include="MoneyGlitch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BotDir\cBot.h" />
+    <ClInclude Include="api\cApi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BotDir" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

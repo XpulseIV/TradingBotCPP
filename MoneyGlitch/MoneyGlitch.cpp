@@ -1,8 +1,10 @@
-#include "BotDir/cBot.h"
+#include "api/cApi.h"
 
 int main(int argc, char* argv[])
 {
-    traidingBot = new cBot();
+    auto api = cApi();
+
+    auto csvData = api.ParseCsv("dataBTC.csv");
     
     return 0;
 }
