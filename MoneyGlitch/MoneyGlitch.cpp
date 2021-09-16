@@ -1,14 +1,13 @@
 #include <iostream>
 
-#include "PythonStuff/cPython.h"
+#include "api/cApi.h"
 
 int main()
 {
-    const cPython pythonHandler;
+    auto cApii = new cApi();
 
-    const char* filename = "PythonStuff/test.py";
+    auto data = cApii->ParseCsv("dataBTC.csv");
     
-    pythonHandler.GetData(filename, "..\dataBTC.csv");
-    
+    for (auto& as : data.Dates) std::cout << as.Year << std::endl;
     return 0;
 }

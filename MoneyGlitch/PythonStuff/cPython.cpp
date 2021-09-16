@@ -18,9 +18,7 @@ void cPython::GetData(const char* filename, const char* filenameOfCSVFile)
 
     PyObject* result = PyObject_CallObject(func, args);
 
-    auto lel1 = result[0];
-    auto lel2 = result[1];
-    auto lel3 = result[2];
+    std::cout << sizeof(result) << std::endl;
     
     Py_Finalize();
 }

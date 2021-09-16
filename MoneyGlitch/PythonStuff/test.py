@@ -1,11 +1,14 @@
-def getData(fileName):
-    f = open(fileName, "r")
-
+class dataStruct:
     dates = []
     closePrices = []
     openPrices = []
     highest = []
     lowest = []
+
+def getData(fileName):
+    f = open(fileName, "r")
+
+    t = dataStruct()
 
     f.readline()
 
@@ -14,10 +17,12 @@ def getData(fileName):
         secondComma = line.find(',', firstComma+1)
         thirdComma = line.find(',', secondComma+1)
 
-        dates.append(line[4:14])
-        closePrices.append(line[15:firstComma])
-        openPrices.append(line[firstComma+1:secondComma])
-        highest.append(line[secondComma+1:thirdComma])
-        lowest.append(line[thirdComma+1:-1])
+        t.dates.append(line[4:14])
+        t.closePrices.append(line[15:firstComma])
+        t.openPrices.append(line[firstComma+1:secondComma])
+        t.highest.append(line[secondComma+1:thirdComma])
+        t.lowest.append(line[thirdComma+1:-1])
 
-    return dates, closePrices, openPrices, highest, lowest
+    f.close()
+
+    return t
