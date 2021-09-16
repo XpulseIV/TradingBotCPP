@@ -2,19 +2,25 @@
 
 #include <iostream>
 
-void cPython::getData(const char* filename)
+void cPython::GetData(const char* filename, const char* filenameOfCSVFile)
 {
     Py_Initialize();
 
-    PyObject* myModuleString = PyBytes_FromString((char*)"main");
-    PyObject* myModule = PyImport_Import(myModuleString);
+    FILE* fp = _Py_fopen(filename, "r");
 
-    PyObject* myFunction = PyObject_GetAttrString(myModule,(char*)"testFunc");
-    PyObject* args = PyTuple_Pack(1,2);
+    PyRun_SimpleFile(fp, filename);
+    
+    PyObject* moduleMainString = PyUnicode_FromString("__main__");
+    PyObject* moduleMain = PyImport_Import(moduleMainString);
 
-    PyObject* myResult = PyObject_CallObject(myFunction, args);
+    PyObject* func = PyObject_GetAttrString(moduleMain, "getData");
+    PyObject* args = PyTuple_Pack(1, PyUnicode_FromString(filenameOfCSVFile));
 
-    double result = PyFloat_AsDouble(myResult);
+    PyObject* result = PyObject_CallObject(func, args);
+
+    auto lel1 = result[0];
+    auto lel2 = result[1];
+    auto lel3 = result[2];
     
     Py_Finalize();
 }

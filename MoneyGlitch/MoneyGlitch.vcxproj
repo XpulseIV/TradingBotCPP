@@ -167,7 +167,7 @@
     <ClInclude Include="PythonStuff\cPython.h" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PythonStuff\main.py" />
+    <Content Include="PythonStuff\test.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -23,5 +23,5 @@ public:
     };
 
 
-    static cDataCsv ParseCsv(const std::string& file_name);
+    static cDataCsv ParseCsv(const char* file_name);
 };

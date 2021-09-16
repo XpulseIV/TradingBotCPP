@@ -4,11 +4,11 @@
 
 int main()
 {
-    const cPython pythonStuff;
+    const cPython pythonHandler;
 
-    const char* filename = "PythonStuff/main.py";
+    const char* filename = "PythonStuff/test.py";
     
-    pythonStuff.getData(filename);
+    pythonHandler.GetData(filename, "..\dataBTC.csv");
     
     return 0;
 }

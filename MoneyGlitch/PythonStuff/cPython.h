@@ -10,5 +10,5 @@
 class cPython
 {
 public:
-    static void getData(const char* filename);
+    static void GetData(const char* filename, const char* filenameOfCSVFile);
 };

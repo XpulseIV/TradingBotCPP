@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-cApi::cDataCsv cApi::ParseCsv(const std::string& file_name)
+cApi::cDataCsv cApi::ParseCsv(const char* file_name)
 {
     cDataCsv data; //The data
     std::string line; //Line
