@@ -1,11 +1,14 @@
 #include <iostream>
 
-#include "api/cApi.h"
+#include "PythonStuff/cPython.h"
 
 int main(int argc, char* argv[])
 {
-    auto api = cApi();
-    const auto csvData = api.ParseCsv("dataBTC.csv");
+    const cPython pythonStuff;
+
+    const char* filename = "C:\\LEL\\LEL\\main.py";
+    
+    pythonStuff.RunPythonFile(filename);
     
     return 0;
 }
