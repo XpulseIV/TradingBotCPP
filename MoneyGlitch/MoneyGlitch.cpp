@@ -2,13 +2,13 @@
 
 #include "PythonStuff/cPython.h"
 
-int main(int argc, char* argv[])
+int main()
 {
     const cPython pythonStuff;
 
-    const char* filename = "C:\\LEL\\LEL\\main.py";
+    const char* filename = "PythonStuff/main.py";
     
-    pythonStuff.RunPythonFile(filename);
+    pythonStuff.getData(filename);
     
     return 0;
 }

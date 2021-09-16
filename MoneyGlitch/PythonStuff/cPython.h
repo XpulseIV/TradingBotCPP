@@ -1,12 +1,14 @@
 ﻿#pragma once
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
 
 #include <stdio.h>
 #include <conio.h>
-#include <Python.h>
 #include <string>
+#include <stdlib.h>
 
 class cPython
 {
 public:
-    static void RunPythonFile(const char* filename);
+    static void getData(const char* filename);
 };

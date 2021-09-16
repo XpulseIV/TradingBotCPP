@@ -158,11 +158,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="api\cApi.cpp" />
     <ClCompile Include="MoneyGlitch.cpp" />
     <ClCompile Include="PythonStuff\cPython.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="api\cApi.h" />
     <ClInclude Include="PythonStuff\cPython.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PythonStuff\main.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
