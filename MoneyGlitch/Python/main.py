@@ -1,8 +1,8 @@
 import ctypes
+import os
 
-def print_hi(name):
-    print(f'Hi, {name}')
-    
+text = "LOL"
 
-if __name__ == '__main__':
-    print_hi('PyCharm')
+print(os.path.isfile('f:/reps/TradingBotCPP/MoneyGlitch/Python/MoneyGlitch.dll'))
+test = ctypes.CDLL('f:/reps/TradingBotCPP/x64/Debug/MoneyGlitch.dll')
+test.print(ctypes.c_char_p(text), len(text))

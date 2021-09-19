@@ -1,8 +1,12 @@
-#include <iostream>
+#include "iostream"
 
-int main()
+extern "C"
 {
-    std::cout << "LOL";
-    
-    return 0;
+    __declspec(dllexport) void print(const char* str, int len)
+    {
+        for (int i = 0; i < len; i++)
+        {
+            std::cout << str[i] << std::endl;
+        }
+    }
 }
