@@ -9,3 +9,5 @@ riderModule.iml
 *.idb
 *.exe
 *.pdb
+
+/.vs/
