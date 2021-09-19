@@ -3,6 +3,11 @@ import os
 
 text = "LOL"
 
-print(os.path.isfile('f:/reps/TradingBotCPP/MoneyGlitch/Python/MoneyGlitch.dll'))
-test = ctypes.CDLL('f:/reps/TradingBotCPP/x64/Debug/MoneyGlitch.dll')
-test.print(ctypes.c_char_p(text), len(text))
+path = os.getcwd() #Get Current Path
+
+path = path[:len(path) - 18] + "x64\\Debug\\MoneyGlitch.dll" #Set Dll Path
+
+test = ctypes.CDLL(path) #Load DLL
+
+
+test.print(ctypes.c_char_p(text), len(text)) #Call DLL Function

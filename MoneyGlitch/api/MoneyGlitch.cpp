@@ -1,8 +1,10 @@
 #include "iostream"
 
+#define funcs __declspec(dllexport)
+
 extern "C"
 {
-    __declspec(dllexport) void print(const char* str, int len)
+    funcs void print(const char* str, int len)
     {
         for (int i = 0; i < len; i++)
         {
