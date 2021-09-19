@@ -11,3 +11,4 @@ riderModule.iml
 *.pdb
 
 /.vs/
+*.db
