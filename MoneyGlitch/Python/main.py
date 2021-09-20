@@ -19,14 +19,15 @@ arr = ctypes.c_byte * len(text)
 
 str = cstr(arr(*text), len(text))
 
-test.print.argtypes = (ctypes.POINTER(ctypes.c_byte), ctypes.c_int)
+test.print.argtypes = (ctypes.POINTER(ctypes.c_byte), ctypes.c_int) # Set arg types
 test.print(str.str, str.length) #Call DLL Function
 
-test.cPrint.argtypes = (ctypes.POINTER(ctypes.c_byte), ctypes.c_int)
-test.cPrint.restype = ctypes.c_void_p
+test.cPrint.argtypes = (ctypes.POINTER(ctypes.c_byte), ctypes.c_int) 
+test.cPrint.restype = ctypes.c_void_p # Set return type
 
-l = cstr.from_address(test.cPrint(str.str, str.length))
+l = cstr.from_address(test.cPrint(str.str, str.length)) # get value from the void pointer
 print(l.length)
 
-test.free_cstr(ctypes.byref(l))
+# Remove the pointer
+test.free_cstr(ctypes.byref(l)) 
 del l
