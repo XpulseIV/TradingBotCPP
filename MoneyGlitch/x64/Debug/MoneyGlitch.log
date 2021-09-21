@@ -1,3 +1,5 @@
 ﻿  funcs.cpp
   MoneyGlitch.cpp
-  MoneyGlitch.vcxproj -> C:\Users\malte\RiderProjects\testStuff\x64\Debug\MoneyGlitch.dll
+  LINK : F:\Reps\TradingBotCPP\x64\Debug\MoneyGlitch.dll not found or not built by the last incremental link; performing full link
+     Creating library F:\Reps\TradingBotCPP\x64\Debug\MoneyGlitch.lib and object F:\Reps\TradingBotCPP\x64\Debug\MoneyGlitch.exp
+  MoneyGlitch.vcxproj -> F:\Reps\TradingBotCPP\x64\Debug\MoneyGlitch.dll

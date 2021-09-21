@@ -4,6 +4,8 @@ import multiprocessing
 
 if multiprocessing.cpu_count() == 16:
     path = "C:\\Users\\malte\\RiderProjects\\testStuff\\x64\\Debug\\MoneyGlitch.dll"
+else:
+    path = "F:\\Reps\\TradingBotCPP\\x64\\Debug\\MoneyGlitch.dll"
 
 lib = ctypes.CDLL(path)
 
@@ -21,3 +23,5 @@ lib.BotTest.argtypes = (ctypes.c_int, ctypes.c_float)
 lib.BotTest.restype = ctypes.c_void_p
 
 returnedClassFromBotInC = toBeReturned.from_address(lib.BotTest(ctypes.c_int(0), ctypes.c_float(price)))
+
+print(returnedClassFromBotInC.Action)
