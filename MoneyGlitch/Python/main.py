@@ -1,33 +1,23 @@
+import requests
 import ctypes
-import os
+import multiprocessing
 
-class cstr (ctypes.Structure):
-    _fields_ = [("str", ctypes.POINTER(ctypes.c_byte)), 
-                ("length", ctypes.c_int)]
+if multiprocessing.cpu_count() == 16:
+    path = "C:\\Users\\malte\\RiderProjects\\testStuff\\x64\\Debug\\MoneyGlitch.dll"
 
+lib = ctypes.CDLL(path)
 
-text = "LOL".encode('utf-8')
+class toBeReturned(ctypes.Structure):
+    _fields_ = [("Currency", ctypes.c_int),
+    ("Action", ctypes.c_int)
+    ]
 
-path = os.getcwd() #Get Current Path
+response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+data = response.json()
+currency_int = 0
+price = data['bpi']['USD']['rate_float']
 
-path = path[:len(path) - 18] + "x64\\Debug\\MoneyGlitch.dll" #Set Dll Path
+lib.BotTest.argtypes = (ctypes.c_int, ctypes.c_float)
+lib.BotTest.restype = ctypes.c_void_p
 
-test = ctypes.CDLL(path) #Load DLL
-
-# making a char array
-arr = ctypes.c_byte * len(text)
-
-str = cstr(arr(*text), len(text))
-
-test.print.argtypes = (ctypes.POINTER(ctypes.c_byte), ctypes.c_int) # Set arg types
-test.print(str.str, str.length) #Call DLL Function
-
-test.cPrint.argtypes = (ctypes.POINTER(ctypes.c_byte), ctypes.c_int) 
-test.cPrint.restype = ctypes.c_void_p # Set return type
-
-l = cstr.from_address(test.cPrint(str.str, str.length)) # get value from the void pointer
-print(l.length)
-
-# Remove the pointer
-test.free_cstr(ctypes.byref(l)) 
-del l
+returnedClassFromBotInC = toBeReturned.from_address(lib.BotTest(ctypes.c_int(0), ctypes.c_float(price)))
