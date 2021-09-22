@@ -1,11 +1,17 @@
 ﻿#include <iostream>
 #include "funcs.h"
 
-toBeReturned* BotBrain(int currency_int, float current_price)
+cToBeReturned* BotEntryPoint(int currency_int, float current_price)
 {
-    auto decision = new toBeReturned{static_cast<currencies>(currency_int), static_cast<actions>(2)};
+	const auto decision = new cToBeReturned{static_cast<currencies>(currency_int), static_cast<actions>(2)};
 
-    std::cout << current_price << std::endl;
+    int result = 0;
+
+	#pragma region Bot_Logic
+
+	#pragma endregion
+    
+    decision->Action = static_cast<actions>(result);
     
     return decision;
 }

@@ -2,7 +2,7 @@
 #include "../../enums/Currencies/Currencies.h"
 #include "../../enums/Actions/Actions.h"
 
-struct toBeReturned
+struct cToBeReturned
 {
     currencies Currency;
     actions Action;

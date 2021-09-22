@@ -4,8 +4,8 @@
 
 extern "C"
 {
-    DLL toBeReturned* BotTest(const int currency_int, const float current_price)
+    DLL cToBeReturned* BotEntryPointPython(const int currency_int, const float current_price)
     {
-        return BotBrain(currency_int, current_price);
+        return BotEntryPoint(currency_int, current_price);
     }
 }
