@@ -143,7 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CPP\Brain\brainFuncs\funcs.cpp" />
+    <ClCompile Include="CPP\Brain\BrainFunctions\funcs.cpp" />
     <ClCompile Include="MoneyGlitch.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -222,10 +222,10 @@
     <Content Include="Python\main.py" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CPP\Brain\brainFuncs\funcs.h" />
-    <ClInclude Include="CPP\Brain\enums\Actions\Actions.h" />
-    <ClInclude Include="CPP\Brain\enums\Currencies\Currencies.h" />
-    <ClInclude Include="CPP\Brain\structs\toBeReturned\toBeReturned.h" />
+    <ClInclude Include="CPP\Brain\BrainFunctions\funcs.h" />
+    <ClInclude Include="CPP\Brain\Enums\Actions\Actions.h" />
+    <ClInclude Include="CPP\Brain\Enums\Currencies\Currencies.h" />
+    <ClInclude Include="CPP\Brain\Types\Thought\cThought.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

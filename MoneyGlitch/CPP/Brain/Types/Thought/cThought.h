@@ -2,8 +2,9 @@
 #include "../../enums/Currencies/Currencies.h"
 #include "../../enums/Actions/Actions.h"
 
-struct toBeReturned
+class cThought
 {
+public:
     currencies Currency;
     actions Action;
 };
