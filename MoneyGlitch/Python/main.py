@@ -19,9 +19,14 @@ data = response.json()
 currency_int = 0
 price = data['bpi']['USD']['rate_float']
 
-lib.BotTest.argtypes = (ctypes.c_int, ctypes.c_float)
-lib.BotTest.restype = ctypes.c_void_p
+lib.BotEntryPointPython.argtypes = (ctypes.c_int, ctypes.c_float)
+lib.BotEntryPointPython.restype = ctypes.c_void_p
 
-returnedClassFromBotInC = toBeReturned.from_address(lib.BotTest(ctypes.c_int(0), ctypes.c_float(price)))
+returnedClassFromBotInC = toBeReturned.from_address(lib.BotEntryPointPython(ctypes.c_int(0), ctypes.c_float(price)))
 
-print(returnedClassFromBotInC.Action)
+if (returnedClassFromBotInC.Action == 0):
+    print("Bought a BTC for: " + str(price))
+elif (returnedClassFromBotInC == 1):
+    print("Sold a BTC for:" + str(price))
+else:
+    print("Did nothing")
