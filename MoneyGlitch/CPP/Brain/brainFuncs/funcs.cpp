@@ -9,6 +9,8 @@ cToBeReturned* BotEntryPoint(int currency_int, float current_price)
 
 	#pragma region Bot_Logic
 
+
+
 	#pragma endregion
     
     decision->Action = static_cast<actions>(result);
