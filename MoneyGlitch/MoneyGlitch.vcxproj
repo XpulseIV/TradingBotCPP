@@ -225,7 +225,7 @@
     <ClInclude Include="CPP\Brain\BrainFunctions\funcs.h" />
     <ClInclude Include="CPP\Brain\Enums\Actions\Actions.h" />
     <ClInclude Include="CPP\Brain\Enums\Currencies\Currencies.h" />
-    <ClInclude Include="CPP\Brain\Types\Thought\cThought.h" />
+    <ClInclude Include="CPP\Brain\Types\Thought\cAction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,17 +1,29 @@
 #define DLL __declspec(dllexport)
-#include "CPP/Brain/Types/Thought/cThought.h"
+#include "CPP/Brain/Types/Thought/cAction.h"
 #include "CPP/Brain/BrainFunctions/funcs.h"
+
+int Money;
+// BITCOIN
+std::vector<float> HistoryRateBTC;
+std::vector<float> HistoryChangeBTC;
 
 extern "C"
 {
-    DLL cThought* BotTest(const int currency_int, const float current_price)
+    DLL void BotEntryPoint(const int money)
     {
-        return BotBrain(currency_int, current_price);
+        Money = money;
     }
+
+    DLL cAction* GetThought(const int currency_int, const float rate_float)
+    {
+        return BotBrain(currency_int, rate_float);
+    }
+    
     DLL void SetMoney(const int money)
     {
         Money = money;
     }
+    
     DLL void Import(const int currency_int, const float current_price)
     {
         switch(currency_int)

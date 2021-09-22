@@ -1,11 +1,5 @@
 ﻿#pragma once
 #include <vector>
-#include "../Types/Thought/cThought.h"
+#include "../Types/Thought/cAction.h"
 
-cThought* BotBrain(int currency_int, float current_price);
-
-int Money;
-
-// BITCOIN
-std::vector<float> HistoryRateBTC;
-std::vector<float> HistoryChangeBTC;
+cAction* BotBrain(int currency_int, float current_price);
